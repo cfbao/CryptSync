@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<project name="SetVersionInfo" default="setversioninfo">
+    <target name="setversioninfo">
+        <setenv>
+            <variable name="MajorVersion" value="1" />
+            <variable name="MinorVersion" value="2" />
+            <variable name="MicroVersion" value="7" />
+            <variable name="WCREV" value="341" />
+            <variable name="WCDATE" value="2017/01/31 14:48:15" />
+        </setenv>
+    </target>
+</project>

@@ -698,7 +698,7 @@ int CFolderSync::SyncFolder( const PairData& pt )
                     {
                         std::wstring cryptpath = CPathUtils::AdjustForMaxPath(CPathUtils::Append(pt.cryptpath, GetEncryptedFilename(it->first, pt.password, pt.encnames, pt.use7z, pt.useGPG)));
                         std::wstring origpath = CPathUtils::AdjustForMaxPath(CPathUtils::Append(pt.origpath, it->first));
-                        if (!DecryptFile(origpath, cryptpath, pt.password, it->second, pt.useGPG))
+                        if (!DecryptFile(origpath, cryptpath, pt.password, cryptit->second, pt.useGPG))
                             retVal |= ErrorCrypt;
                     }
                 }
@@ -925,14 +925,36 @@ bool CFolderSync::EncryptFile(const std::wstring& orig, const std::wstring& cryp
     GetFileSizeEx(hFile, &filesize);
     hFile.CloseHandle();
 
-    int compression = 9;
-    if (filesize.QuadPart > 100*1024*1024)
-        compression = 0;    // turn off compression for files bigger than 100MB
+    int compression = 3;
+    std::wstring orig_ext = CPathUtils::GetFileExtension(orig);
+    if (filesize.QuadPart > 100*1024*1024 ||
+        orig_ext == L"7z" ||
+        orig_ext == L"zip" ||
+        orig_ext == L"rar" ||
+        orig_ext == L"gz" ||
+        orig_ext == L"tgz" ||
+        orig_ext == L"jpg" ||
+        orig_ext == L"png" ||
+        orig_ext == L"mp4" ||
+        orig_ext == L"mkv" ||
+        orig_ext == L"avi" ||
+        orig_ext == L"wmv" ||
+        orig_ext == L"mp3" ||
+        orig_ext == L"m4a" ||
+        orig_ext == L"ogg" ||
+        orig_ext == L"opus" ||
+        orig_ext == L"amr" ||
+        orig_ext == L"3gp" ||
+        orig_ext == L"docx" ||
+        orig_ext == L"xlsx" ||
+        orig_ext == L"pptx"
+       )
+        compression = 0;    // turn off compression for compressed files and files bigger than 100MB
 
     if (password.empty())
     {
         CCircularLog::Instance()(_T("ERROR:   password is blank - NOT secure - force 7z not GPG"), crypt.c_str());
-        swprintf_s(cmdlinebuf.get(), buflen, L"\"%s\" a -t7z -ssw \"%s\" \"%s\" -mx%d -mhe=on -m0=lzma2 -mtc=on -w -stl", m_sevenzip.c_str(), cryptname.c_str(), orig.c_str(), compression);
+        swprintf_s(cmdlinebuf.get(), buflen, L"\"%s\" a -t7z -ssw \"%s\" \"%s\" -mx%d -mhe=on -mtc=on -w -stl", m_sevenzip.c_str(), cryptname.c_str(), orig.c_str(), compression);
     }
     else
     {
@@ -940,7 +962,7 @@ bool CFolderSync::EncryptFile(const std::wstring& orig, const std::wstring& cryp
         if (useGPG)
             swprintf_s(cmdlinebuf.get(), buflen, L"\"%s\" --batch --yes -c -a --passphrase \"%s\" -o \"%s\" \"%s\" ", m_GnuPG.c_str(), password.c_str(), cryptname.c_str(), orig.c_str());
         else
-            swprintf_s(cmdlinebuf.get(), buflen, L"\"%s\" a -t7z -ssw \"%s\" \"%s\" -p\"%s\" -mx%d -mhe=on -m0=lzma2 -mtc=on -w -stl", m_sevenzip.c_str(), cryptname.c_str(), orig.c_str(), password.c_str(), compression);
+            swprintf_s(cmdlinebuf.get(), buflen, L"\"%s\" a -t7z -ssw \"%s\" \"%s\" -p\"%s\" -mx%d -mhe=on -mtc=on -w -stl", m_sevenzip.c_str(), cryptname.c_str(), orig.c_str(), password.c_str(), compression);
     }
 
     bool bRet = RunExtTool(cmdlinebuf.get(), targetfolder, useGPG);

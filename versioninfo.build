@@ -2,7 +2,6 @@
 <project name="VersionInfo" default="versioninfo">
 
     <target name="versioninfo">
-
         <exec program="SubWCRev.exe">
             <arg value="." />
             <arg value="version.build.in" />

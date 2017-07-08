@@ -1,0 +1,184 @@
+Buildfile: file:///C:/Users/Chenfeng/Google Drive/Documents/Programming/CryptSync/default.build
+Target framework: Microsoft .NET Framework 4.0
+Target(s) specified: setup 
+
+
+VSNET:
+
+
+env:
+
+
+VersionInfo:
+
+     [nant] C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\versioninfo.build versioninfo
+            Buildfile: file:///C:/Users/Chenfeng/Google Drive/Documents/Programming/CryptSync/versioninfo.build
+            Target framework: Microsoft .NET Framework 4.0
+            Target(s) specified: versioninfo 
+            
+            
+            versioninfo:
+            
+                 [exec] SubWCRev: 'C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync'
+                 [exec] Last committed at revision 341
+                 [exec] Updated to revision 341
+                 [exec] Local modifications found
+                 [exec] Unversioned items found
+                 [nant] C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\version.build setversioninfo
+                        Buildfile: file:///C:/Users/Chenfeng/Google Drive/Documents/Programming/CryptSync/version.build
+                        Target framework: Microsoft .NET Framework 4.0
+                        Target(s) specified: setversioninfo 
+                        
+                        
+                        setversioninfo:
+                        
+                        
+                        BUILD SUCCEEDED
+                        
+                        Total time: 0 seconds.
+                        
+            
+            BUILD SUCCEEDED
+            
+            Total time: 1.1 seconds.
+            
+
+CryptSync:
+
+     [exec] Microsoft (R) Build Engine version 14.0.25420.1
+     [exec] Copyright (C) Microsoft Corporation. All rights reserved.
+     [exec] 
+     [exec]   stdafx.cpp
+     [exec]   AeroControls.cpp
+     [exec]   AeroGlass.cpp
+     [exec]   BaseDialog.cpp
+     [exec]   BaseWindow.cpp
+     [exec]   BrowseFolder.cpp
+     [exec]   CircularLog.cpp
+     [exec]   CmdLineParser.cpp
+     [exec]   codecvt.cpp
+     [exec]   DebugOutput.cpp
+     [exec]   DirFileEnum.cpp
+     [exec]   DlgResizer.cpp
+     [exec]   FileDropTarget.cpp
+     [exec]   hyperlink.cpp
+     [exec]   PathUtils.cpp
+     [exec]   ProgressDlg.cpp
+     [exec]   ReaderWriterLock.cpp
+     [exec]   Registry.cpp
+     [exec]   StringUtils.cpp
+     [exec]   UnicodeUtils.cpp
+     [exec]   AboutDlg.cpp
+     [exec]   CryptSync.cpp
+     [exec]   FolderSync.cpp
+     [exec]   Ignores.cpp
+     [exec]   OptionsDlg.cpp
+     [exec]   PairAddDlg.cpp
+     [exec]   Pairs.cpp
+     [exec]   PathWatcher.cpp
+     [exec]   TextDlg.cpp
+     [exec]   TrayWindow.cpp
+     [exec]   UpdateDlg.cpp
+     [exec]   Generating code
+     [exec]   All 3066 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+     [exec]   Finished generating code
+     [exec]   CryptSync.vcxproj -> C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\bin\Release\Win32\CryptSync.exe
+     [exec]   CryptSync.vcxproj -> C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\bin\Release\Win32\CryptSync.pdb (Full PDB)
+     [exec] Microsoft (R) Build Engine version 14.0.25420.1
+     [exec] Copyright (C) Microsoft Corporation. All rights reserved.
+     [exec] 
+     [exec]   stdafx.cpp
+     [exec]   AeroControls.cpp
+     [exec]   AeroGlass.cpp
+     [exec]   BaseDialog.cpp
+     [exec]   BaseWindow.cpp
+     [exec]   BrowseFolder.cpp
+     [exec]   CircularLog.cpp
+     [exec]   CmdLineParser.cpp
+     [exec]   codecvt.cpp
+     [exec]   DebugOutput.cpp
+     [exec]   DirFileEnum.cpp
+     [exec]   DlgResizer.cpp
+     [exec]   FileDropTarget.cpp
+     [exec]   hyperlink.cpp
+     [exec]   PathUtils.cpp
+     [exec]   ProgressDlg.cpp
+     [exec]   ReaderWriterLock.cpp
+     [exec]   Registry.cpp
+     [exec]   StringUtils.cpp
+     [exec]   UnicodeUtils.cpp
+     [exec]   AboutDlg.cpp
+     [exec]   CryptSync.cpp
+     [exec]   FolderSync.cpp
+     [exec]   Ignores.cpp
+     [exec]   OptionsDlg.cpp
+     [exec]   PairAddDlg.cpp
+     [exec]   Pairs.cpp
+     [exec]   PathWatcher.cpp
+     [exec]   TextDlg.cpp
+     [exec]   TrayWindow.cpp
+     [exec]   UpdateDlg.cpp
+     [exec]   Generating code
+     [exec]   All 3066 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+     [exec]   Finished generating code
+     [exec]   CryptSync.vcxproj -> C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\bin\Release\x64\CryptSync64.exe
+     [exec]   CryptSync.vcxproj -> C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\bin\Release\x64\CryptSync64.pdb (Full PDB)
+
+setup:
+
+     [nant] C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\src\Setup\setup.build setup
+            Buildfile: file:///C:/Users/Chenfeng/Google Drive/Documents/Programming/CryptSync/src/Setup/setup.build
+            Target framework: Microsoft .NET Framework 4.0
+            Target(s) specified: setup 
+            
+            
+            VersionInfo:
+            
+                 [nant] C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\versioninfo.build versioninfo
+                        Buildfile: file:///C:/Users/Chenfeng/Google Drive/Documents/Programming/CryptSync/versioninfo.build
+                        Target framework: Microsoft .NET Framework 4.0
+                        Target(s) specified: versioninfo 
+                        
+                        
+                        versioninfo:
+                        
+                             [exec] SubWCRev: 'C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync'
+                             [exec] Last committed at revision 341
+                             [exec] Updated to revision 341
+                             [exec] Local modifications found
+                             [exec] Unversioned items found
+                             [nant] C:\Users\Chenfeng\Google Drive\Documents\Programming\CryptSync\version.build setversioninfo
+                                    Buildfile: file:///C:/Users/Chenfeng/Google Drive/Documents/Programming/CryptSync/version.build
+                                    Target framework: Microsoft .NET Framework 4.0
+                                    Target(s) specified: setversioninfo 
+                                    
+                                    
+                                    setversioninfo:
+                                    
+                                    
+                                    BUILD SUCCEEDED
+                                    
+                                    Total time: 0 seconds.
+                                    
+                        
+                        BUILD SUCCEEDED
+                        
+                        Total time: 0.1 seconds.
+                        
+            
+            setup:
+            
+                 [exec] Setup.wxs
+               [delete] Deleting 2 files.
+                 [exec] Setup64.wxs
+               [delete] Deleting 2 files.
+            
+            BUILD SUCCEEDED
+            
+            Total time: 25.8 seconds.
+            
+
+BUILD SUCCEEDED
+
+Total time: 80.6 seconds.
+
