@@ -38,4 +38,5 @@ protected:
 private:
     HWND                m_hParent;
     CHyperLink          m_link;
+    CHyperLink          m_link2;
 };

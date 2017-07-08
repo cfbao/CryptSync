@@ -2,11 +2,11 @@
 <project name="VersionInfo" default="versioninfo">
 
     <target name="versioninfo">
-        <exec program="SubWCRev.exe">
+        <!--<exec program="SubWCRev.exe">
             <arg value="." />
             <arg value="version.build.in" />
             <arg value="version.build" />
-        </exec>
+        </exec>-->
 
         <nant target="setversioninfo">
             <buildfiles>

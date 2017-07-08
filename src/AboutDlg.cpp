@@ -46,6 +46,7 @@ LRESULT CAboutDlg::DlgFunc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam
             SetDlgItemText(*this, IDC_VERSIONINFO, buf);
             SetDlgItemText(*this, IDC_DATE, _T(CS_VERDATE));
             m_link.ConvertStaticToHyperlink(hwndDlg, IDC_WEBLINK, _T("http://stefanstools.sourceforge.net"));
+            m_link2.ConvertStaticToHyperlink(hwndDlg, IDC_GITHUB, _T("https://github.com/cfbao/CryptSync"));
         }
         return TRUE;
     case WM_COMMAND:
