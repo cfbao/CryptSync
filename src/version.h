@@ -9,4 +9,4 @@
 #define CS_VERMINOR     2
 #define CS_VERMICRO     7
 #define CS_VERBUILD     34201
-#define CS_VERDATE      "2017/07/08 16:47:39"
+#define CS_VERDATE      "2017-07-09T05:18:27Z"

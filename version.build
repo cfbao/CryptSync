@@ -6,7 +6,7 @@
             <variable name="MinorVersion" value="2" />
             <variable name="MicroVersion" value="7" />
             <variable name="WCREV" value="34201" />
-            <variable name="WCDATE" value="2017/07/08 16:47:39" />
+            <variable name="WCDATE" value="2017-07-09T05:18:27Z" />
         </setenv>
     </target>
 </project>
