@@ -1,10 +1,11 @@
 // CryptSync - A folder sync tool with encryption
 
 // Copyright (C) 2012-2014, 2016 - Stefan Kueng
+// Copyright (C) 2017 - Chenfeng Bao
 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
-// as published by the Free Software Foundation; either version 2
+// as published by the Free Software Foundation; either version 3
 // of the License, or (at your option) any later version.
 
 // This program is distributed in the hope that it will be useful,
@@ -177,7 +178,8 @@ LRESULT CALLBACK CTrayWindow::WinMsgHandler(HWND hwnd, UINT uMsg, WPARAM wParam,
             SetTimer(*this, TIMER_DETECTCHANGES, TIMER_DETECTCHANGESINTERVAL, NULL);
             SetTimer(*this, TIMER_FULLSCAN, TIMER_FULLSCANINTERVAL, NULL);
             unsigned int threadId = 0;
-            _beginthreadex(NULL, 0, UpdateCheckThreadEntry, this, 0, &threadId);
+            // comment the line below to disable update check in cfbao personal version
+            // _beginthreadex(NULL, 0, UpdateCheckThreadEntry, this, 0, &threadId);
             if (!m_bTrayMode)
                 ::PostMessage(*this, WM_COMMAND, MAKEWPARAM(IDM_OPTIONS, 1), 0);
             foldersyncer.SetPairs(g_pairs);
